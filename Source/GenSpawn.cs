@@ -60,6 +60,53 @@ namespace RimThreaded
                 __result = (Thing)null;
                 return false;
             }
+            /*
+            IL_0048: ldstr        " out of bounds at "
+            IL_004d: stelem.ref
+            IL_004e: dup
+            IL_004f: ldc.i4.3
+            IL_0050: ldarg.1      // loc
+            IL_0051: box          Verse.IntVec3
+            IL_0056: stelem.ref
+            IL_0057: dup
+            IL_0058: ldc.i4.4
+            IL_0059: ldstr        "."
+            IL_005e: stelem.ref
+            IL_005f: call         string [mscorlib]System.String::Concat(object[])
+            IL_0064: ldc.i4.0
+            IL_0065: call         void Verse.Log::Error(string, bool)
+            IL_006a: ldnull
+            IL_006b: ret
+
+            if (null != newThing) {
+                IL_008e: ldarg.1      // newThing
+                IL_008f: ldnull
+                IL_0090: cgt.un
+                IL_0092: stloc.s      V_4
+                IL_0094: ldloc.s      V_4
+                IL_0096: brfalse      IL_0459
+
+            if (null != newThing.def) {
+                IL_009c: ldarg.1      // newThing
+                IL_009d: ldfld        class ['Assembly-CSharp']Verse.ThingDef ['Assembly-CSharp']Verse.Thing::def
+                IL_00a2: ldnull
+                IL_00a3: cgt.un
+                IL_00a5: stloc.s      V_5
+                IL_00a7: ldloc.s      V_5
+                IL_00a9: brfalse      IL_0458
+
+
+	         ldloc.s 4
+	         brfalse IL_0459
+             nop
+	         ldarg.1
+	         ldfld class ['Assembly-CSharp']Verse.ThingDef ['Assembly-CSharp']Verse.Thing::def
+	         ldnull
+	         cgt.un
+	         stloc.s 5
+	         ldloc.s 5
+	         brfalse IL_0458
+            */
             //added null check
             if (null != newThing)
             {
